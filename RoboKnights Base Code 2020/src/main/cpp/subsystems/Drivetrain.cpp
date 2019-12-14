@@ -21,10 +21,12 @@ Drivetrain::Drivetrain() : frc::Subsystem("Drivetrain"){}
 
 void Drivetrain::InitDefaultCommand() 
 {
+  //set the default command to regular driving
   SetDefaultCommand(new DefaultDrive());
 }
 
 void Drivetrain::MecanumDrive(double x, double y, double rot)
 {
-  mecanumDrive.DriveCartesian(x * 0.75, y * 0.75, rot * 0.75);
+  //Use FRCs method for mecanum driving
+  mecanumDrive.DriveCartesian(x * MAX_SPEED, y * MAX_SPEED, rot * MAX_SPEED);
 }

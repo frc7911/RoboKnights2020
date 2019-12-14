@@ -13,3 +13,5 @@ constexpr int DRIVE_BACK_LEFT = 7;
 constexpr int DRIVE_BACK_RIGHT = 6;
 
 constexpr int FLIGHTSTICK_PORT = 0;
+
+constexpr double MAX_SPEED = 0.75;

@@ -12,5 +12,6 @@
 OI::OI() {}
 
 double OI::getAxis(int axis){
+  //return whatever axis is passed through the args
   return flightstick.GetRawAxis(axis);
 }

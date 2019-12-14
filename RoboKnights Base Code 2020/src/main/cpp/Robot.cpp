@@ -74,8 +74,7 @@ void Robot::TeleopInit() {
 
 void Robot::TeleopPeriodic() 
 {
-   frc::Scheduler::GetInstance()->Run(); 
-   test.Execute();
+   frc::Scheduler::GetInstance()->Run();
 }
 
 void Robot::TestPeriodic() {}

@@ -9,9 +9,9 @@
 
 #include <frc/commands/Command.h>
 
-class ExampleCommand : public frc::Command {
+class DefaultDrive : public frc::Command {
  public:
-  ExampleCommand();
+  DefaultDrive();
   void Initialize() override;
   void Execute() override;
   bool IsFinished() override;

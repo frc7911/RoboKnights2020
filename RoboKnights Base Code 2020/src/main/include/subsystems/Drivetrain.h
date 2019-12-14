@@ -9,12 +9,21 @@
 
 #include <frc/commands/Subsystem.h>
 
-class ExampleSubsystem : public frc::Subsystem {
+#include "WPILib.h"
+
+#include "RobotMap.h"
+
+class Drivetrain : public frc::Subsystem {
  public:
-  ExampleSubsystem();
+  Drivetrain();
   void InitDefaultCommand() override;
+  void MecanumDrive(double x, double y, double rot);
 
  private:
-  // It's desirable that everything possible under private except
-  // for methods that implement subsystem capabilities
+  frc::VictorSP leftFront{DRIVE_FRONT_LEFT};
+  frc::VictorSP leftBack{DRIVE_BACK_LEFT};
+  frc::VictorSP rightFront{DRIVE_FRONT_RIGHT};
+  frc::VictorSP rightBack{DRIVE_BACK_RIGHT};
+
+  frc::MecanumDrive mecanumDrive{leftFront, leftBack, rightFront, rightBack};
 };

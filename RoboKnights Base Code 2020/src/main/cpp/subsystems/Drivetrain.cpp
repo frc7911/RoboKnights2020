@@ -5,11 +5,26 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#pragma once
+#include "subsystems/Drivetrain.h"
 
-constexpr int DRIVE_FRONT_LEFT = 5;
-constexpr int DRIVE_FRONT_RIGHT = 7;
-constexpr int DRIVE_BACK_LEFT = 6;
-constexpr int DRIVE_BACK_RIGHT = 8;
+#include "commands/DefaultDrive.h"
 
-constexpr int FLIGHTSTICK_PORT = 0;
+#include "RobotMap.h"
+
+#include "WPILib.h"
+
+#include <iostream>
+
+using namespace std;
+
+Drivetrain::Drivetrain() : frc::Subsystem("Drivetrain"){}
+
+void Drivetrain::InitDefaultCommand() 
+{
+  SetDefaultCommand(new DefaultDrive());
+}
+
+void Drivetrain::MecanumDrive(double x, double y, double rot)
+{
+  mecanumDrive.DriveCartesian(x * 0.5, y * 0.5, rot * 0.5);
+}

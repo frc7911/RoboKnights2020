@@ -9,6 +9,8 @@
 
 #include <frc/WPILib.h>
 
-OI::OI() {
-  // Process operator interface input here.
+OI::OI() {}
+
+double OI::getAxis(int axis){
+  return flightstick.GetRawAxis(axis);
 }

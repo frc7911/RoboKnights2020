@@ -7,7 +7,14 @@
 
 #pragma once
 
+#include <frc/Joystick.h>
+#include "RobotMap.h"
+
 class OI {
  public:
   OI();
+  double getAxis(int);
+
+private:
+  frc::Joystick flightstick{FLIGHTSTICK_PORT};
 };

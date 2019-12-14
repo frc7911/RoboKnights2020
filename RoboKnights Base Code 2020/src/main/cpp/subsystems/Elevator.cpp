@@ -5,16 +5,17 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#pragma once
+#include "subsystems/Elevator.h"
 
-#include <frc/commands/Command.h>
+#include "RobotMap.h"
 
-class MyAutoCommand : public frc::Command {
- public:
-  MyAutoCommand();
-  void Initialize() override;
-  void Execute() override;
-  bool IsFinished() override;
-  void End() override;
-  void Interrupted() override;
-};
+Elevator::Elevator() : frc::Subsystem("Elevator") {}
+
+
+void Elevator::InitDefaultCommand() {
+  // Set the default command for a subsystem here.
+  // SetDefaultCommand(new MySpecialCommand());
+}
+
+// Put methods for controlling this subsystem
+// here. Call these from Commands.

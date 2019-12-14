@@ -9,9 +9,11 @@
 
 #include <frc/commands/Subsystem.h>
 
-#include "WPILib.h"
+#include "frc/WPILib.h"
 
 #include "RobotMap.h"
+
+#include "ctre/Phoenix.h"
 
 class Drivetrain : public frc::Subsystem {
  public:
@@ -20,10 +22,11 @@ class Drivetrain : public frc::Subsystem {
   void MecanumDrive(double x, double y, double rot);
 
  private:
-  frc::VictorSP leftFront{DRIVE_FRONT_LEFT};
-  frc::VictorSP leftBack{DRIVE_BACK_LEFT};
-  frc::VictorSP rightFront{DRIVE_FRONT_RIGHT};
-  frc::VictorSP rightBack{DRIVE_BACK_RIGHT};
+  WPI_VictorSPX leftFront{DRIVE_FRONT_LEFT};
+  WPI_VictorSPX leftBack{DRIVE_BACK_LEFT};
+  WPI_VictorSPX rightFront{DRIVE_FRONT_RIGHT};
+  WPI_VictorSPX rightBack{DRIVE_BACK_RIGHT};
+
 
   frc::MecanumDrive mecanumDrive{leftFront, leftBack, rightFront, rightBack};
 };

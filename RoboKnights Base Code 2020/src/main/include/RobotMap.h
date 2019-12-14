@@ -7,9 +7,9 @@
 
 #pragma once
 
-constexpr int DRIVE_FRONT_LEFT = 5;
-constexpr int DRIVE_FRONT_RIGHT = 7;
-constexpr int DRIVE_BACK_LEFT = 6;
-constexpr int DRIVE_BACK_RIGHT = 8;
+constexpr int DRIVE_FRONT_LEFT = 8;
+constexpr int DRIVE_FRONT_RIGHT = 5;
+constexpr int DRIVE_BACK_LEFT = 7;
+constexpr int DRIVE_BACK_RIGHT = 6;
 
 constexpr int FLIGHTSTICK_PORT = 0;

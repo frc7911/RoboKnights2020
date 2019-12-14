@@ -23,9 +23,9 @@ void DefaultDrive::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void DefaultDrive::Execute() 
 {
-    double x = Robot::oi.getAxis(0);
+    double x = Robot::oi.getAxis(4);
     double y = Robot::oi.getAxis(1);
-    double rot = Robot::oi.getAxis(2);
+    double rot = Robot::oi.getAxis(0);
     Robot::drivetrain.MecanumDrive(x, y, rot);
 }
 

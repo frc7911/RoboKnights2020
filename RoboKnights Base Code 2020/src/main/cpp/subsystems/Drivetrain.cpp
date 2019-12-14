@@ -26,5 +26,5 @@ void Drivetrain::InitDefaultCommand()
 
 void Drivetrain::MecanumDrive(double x, double y, double rot)
 {
-  mecanumDrive.DriveCartesian(x * 0.5, y * 0.5, rot * 0.5);
+  mecanumDrive.DriveCartesian(x * 0.75, y * 0.75, rot * 0.75);
 }

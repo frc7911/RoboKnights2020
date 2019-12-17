@@ -22,7 +22,6 @@ DefaultDrive test = DefaultDrive();
 
 void Robot::RobotInit() 
 {
-  cout << "PLZ REMOVE LATER";
 }
 
 /**

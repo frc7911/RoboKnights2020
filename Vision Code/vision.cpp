@@ -1,6 +1,7 @@
 #include <iostream>
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/core.hpp"
 
 using namespace cv;
 using namespace std;
@@ -15,7 +16,7 @@ using namespace std;
          return -1;
     }
 
-    namedWindow("Control", CV_WINDOW_AUTOSIZE); //create a window called "Control"
+    namedWindow("Control", WINDOW_AUTOSIZE); //create a window called "Control"
 
  int iLowH = 0;
  int iHighH = 179;
@@ -27,14 +28,14 @@ using namespace std;
  int iHighV = 255;
 
  //Create trackbars in "Control" window
- cvCreateTrackbar("LowH", "Control", &iLowH, 179); //Hue (0 - 179)
- cvCreateTrackbar("HighH", "Control", &iHighH, 179);
+ createTrackbar("LowH", "Control", &iLowH, 179); //Hue (0 - 179)
+ createTrackbar("HighH", "Control", &iHighH, 179);
 
- cvCreateTrackbar("LowS", "Control", &iLowS, 255); //Saturation (0 - 255)
- cvCreateTrackbar("HighS", "Control", &iHighS, 255);
+ createTrackbar("LowS", "Control", &iLowS, 255); //Saturation (0 - 255)
+ createTrackbar("HighS", "Control", &iHighS, 255);
 
- cvCreateTrackbar("LowV", "Control", &iLowV, 255); //Value (0 - 255)
- cvCreateTrackbar("HighV", "Control", &iHighV, 255);
+ createTrackbar("LowV", "Control", &iLowV, 255); //Value (0 - 255)
+ createTrackbar("HighV", "Control", &iHighV, 255);
 
     while (true)
     {

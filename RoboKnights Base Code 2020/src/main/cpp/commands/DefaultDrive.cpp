@@ -24,9 +24,9 @@ void DefaultDrive::Initialize() {
 void DefaultDrive::Execute() 
 {
     //get x, y, and z from the joystick
-    double x = Robot::oi.getAxis(4);
-    double y = Robot::oi.getAxis(1);
-    double rot = Robot::oi.getAxis(0);
+    double x = Robot::oi.getAxis(JOYSTICK_X_AXIS);
+    double y = Robot::oi.getAxis(JOYSTICK_Y_AXIS);
+    double rot = Robot::oi.getAxis(JOYSTICK_ROT_AXIS);
 
     //drive using the MecanumDrive in the drivetrain object
     Robot::drivetrain.MecanumDrive(x, y, rot);

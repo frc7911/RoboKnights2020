@@ -13,5 +13,10 @@ constexpr int DRIVE_BACK_LEFT = 7;
 constexpr int DRIVE_BACK_RIGHT = 6;
 
 constexpr int FLIGHTSTICK_PORT = 0;
+constexpr int JOYSTICK_PORT = 1;
+
+constexpr int JOYSTICK_X_AXIS = 4;
+constexpr int JOYSTICK_Y_AXIS = 1;
+constexpr int JOYSTICK_ROT_AXIS = 0;
 
 constexpr double MAX_SPEED = 0.75;

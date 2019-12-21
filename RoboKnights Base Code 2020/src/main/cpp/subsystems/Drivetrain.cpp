@@ -30,3 +30,9 @@ void Drivetrain::MecanumDrive(double x, double y, double rot)
   //Use FRCs method for mecanum driving
   mecanumDrive.DriveCartesian(x * MAX_SPEED, y * MAX_SPEED, rot * MAX_SPEED);
 }
+
+void Drivetrain::AlignTo(double degrees)
+{
+  //Insert code here to read gyroscope and align to the provided degrees
+  //Assigned to: Ty
+}

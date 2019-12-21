@@ -11,7 +11,30 @@
 
 OI::OI() {}
 
-double OI::getAxis(int axis){
+//For now, if int controller == 0, return the coresponding value on the flightstick,
+//else if 1, return the coresponding value on the joystick
+
+//There's probably a better way to do this...
+
+double OI::getAxis(int axis, int controller)
+{
   //return whatever axis is passed through the args
-  return flightstick.GetRawAxis(axis);
+  if(controller == 0)
+  {
+    return flightstick.GetRawAxis(axis);
+  }else if(controller == 1)
+  {
+    return joystick.GetRawAxis(axis);
+  }
+}
+
+bool OI::getButton(int button, int controller)
+{
+  if(controller == 0)
+  {
+    return flightstick.GetRawButton(button);
+  }else if(controller == 1)
+  {
+    return joystick.GetRawButton(button);
+  }
 }

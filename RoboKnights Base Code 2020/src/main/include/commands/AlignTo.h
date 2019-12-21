@@ -7,16 +7,14 @@
 
 #pragma once
 
-#include <frc/Joystick.h>
-#include "RobotMap.h"
+#include <frc/commands/Command.h>
 
-class OI {
+class AlignTo : public frc::Command {
  public:
-  OI();
-  double getAxis(int axis, int controller);
-  bool getButton(int button, int controller);
-
-private:
-  frc::Joystick flightstick{FLIGHTSTICK_PORT};
-  frc::Joystick joystick{JOYSTICK_PORT};
+  AlignTo(int deg);
+  void Initialize() override;
+  void Execute() override;
+  bool IsFinished() override;
+  void End() override;
+  void Interrupted() override;
 };

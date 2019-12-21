@@ -5,64 +5,39 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "commands/DefaultDrive.h"
 #include "commands/AlignTo.h"
 #include "Robot.h"
 #include "RobotMap.h"
 
-AlignTo alignTo90 = AlignTo(90);
+int degrees;
 
-DefaultDrive::DefaultDrive() {
+AlignTo::AlignTo(int deg) {
   // Use Requires() here to declare subsystem dependencies
   // eg. Requires(Robot::chassis.get());
   Requires(&Robot::drivetrain);
+  degrees = deg;
 }
 
 // Called just before this Command runs the first time
-void DefaultDrive::Initialize() 
-{
-  
-}
+void AlignTo::Initialize() {}
 
 // Called repeatedly when this Command is scheduled to run
-void DefaultDrive::Execute() 
+void AlignTo::Execute() 
 {
-
-    //if button 1 on the joystick is pressed, execute align to 90 degrees
-    if(Robot::oi.getButton(1,1))
-    {
-      alignTo90.Start();
-    }
-
-    //get x, y, and z from the joystick
-    //double x = Robot::oi.getAxis(JOYSTICK_X_AXIS);
-    double x;
-    if(Robot::oi.getAxis(2, 1) > 0)
-    {
-      x = -Robot::oi.getAxis(2, 1);
-    }else if(Robot::oi.getAxis(3, 1) > 0)
-    {
-      x = Robot::oi.getAxis(3, 1);
-    }
-    double y = Robot::oi.getAxis(JOYSTICK_Y_AXIS, 1);
-    double rot = Robot::oi.getAxis(JOYSTICK_ROT_AXIS, 1);
-
-    
-    //drive using the MecanumDrive in the drivetrain object
-    Robot::drivetrain.MecanumDrive(x, y, rot);
+    Robot::drivetrain.AlignTo(degrees);
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool DefaultDrive::IsFinished() { 
+bool AlignTo::IsFinished() { 
   return false;
 }
 
 // Called once after isFinished returns true
-void DefaultDrive::End() {
+void AlignTo::End() {
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void DefaultDrive::Interrupted() {
+void AlignTo::Interrupted() {
 }
 

@@ -18,7 +18,6 @@ using namespace std;
 Drivetrain Robot::drivetrain;
 Elevator Robot::elevator;
 OI Robot::oi;
-DefaultDrive test = DefaultDrive();
 
 void Robot::RobotInit() 
 {

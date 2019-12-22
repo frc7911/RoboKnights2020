@@ -30,4 +30,9 @@ constexpr int JOYSTICK_ROT_AXIS = 0;
 //_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+
 
 //Drivetrain adjustable values
-constexpr double MAX_SPEED = 0.75;
+constexpr double MAX_SPEED = 0.5;
+
+//PID Values
+constexpr double ROT_P = 0.5;
+constexpr double ROT_I = 0.5;
+constexpr double ROT_D = 0.5;

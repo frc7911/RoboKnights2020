@@ -8,6 +8,7 @@
 #pragma once
 
 #include <frc/Joystick.h>
+#include <frc/buttons/JoystickButton.h>
 #include "RobotMap.h"
 
 class OI {
@@ -17,6 +18,6 @@ class OI {
   bool getButton(int button, int controller);
 
 private:
-  frc::Joystick flightstick{FLIGHTSTICK_PORT};
-  frc::Joystick joystick{JOYSTICK_PORT};
+  frc::Joystick* flightstick;
+  frc::Joystick* joystick;
 };

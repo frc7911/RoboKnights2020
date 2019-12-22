@@ -6,11 +6,9 @@
 /*----------------------------------------------------------------------------*/
 
 #include "commands/DefaultDrive.h"
-#include "commands/AlignTo.h"
+#include "commands/RotateTo.h"
 #include "Robot.h"
 #include "RobotMap.h"
-
-AlignTo alignTo90 = AlignTo(90);
 
 DefaultDrive::DefaultDrive() {
   // Use Requires() here to declare subsystem dependencies
@@ -27,22 +25,15 @@ void DefaultDrive::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void DefaultDrive::Execute() 
 {
-
-    //if button 1 on the joystick is pressed, execute align to 90 degrees
-    if(Robot::oi.getButton(1,1))
-    {
-      alignTo90.Start();
-    }
-
     //get x, y, and z from the joystick
     //double x = Robot::oi.getAxis(JOYSTICK_X_AXIS);
     double x;
     if(Robot::oi.getAxis(2, 1) > 0)
     {
-      x = -Robot::oi.getAxis(2, 1);
+      x = Robot::oi.getAxis(2, 1);
     }else if(Robot::oi.getAxis(3, 1) > 0)
     {
-      x = Robot::oi.getAxis(3, 1);
+      x = -Robot::oi.getAxis(3, 1);
     }
     double y = Robot::oi.getAxis(JOYSTICK_Y_AXIS, 1);
     double rot = Robot::oi.getAxis(JOYSTICK_ROT_AXIS, 1);

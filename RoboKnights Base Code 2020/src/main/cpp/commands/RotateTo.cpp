@@ -5,39 +5,43 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-#include "commands/AlignTo.h"
+#include "commands/RotateTo.h"
 #include "Robot.h"
 #include "RobotMap.h"
 
-int degrees;
+int degrees = 90;
+bool isFinished;
 
-AlignTo::AlignTo(int deg) {
+RotateTo::RotateTo(int deg) {
   // Use Requires() here to declare subsystem dependencies
   // eg. Requires(Robot::chassis.get());
   Requires(&Robot::drivetrain);
   degrees = deg;
+  isFinished = false;
 }
 
 // Called just before this Command runs the first time
-void AlignTo::Initialize() {}
+void RotateTo::Initialize() 
+{}
 
 // Called repeatedly when this Command is scheduled to run
-void AlignTo::Execute() 
+void RotateTo::Execute() 
 {
-    Robot::drivetrain.AlignTo(degrees);
+  while(!Robot::drivetrain.RotateTo(degrees)){}
+  isFinished = true;
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool AlignTo::IsFinished() { 
-  return false;
+bool RotateTo::IsFinished() { 
+  return isFinished;
 }
 
 // Called once after isFinished returns true
-void AlignTo::End() {
+void RotateTo::End() {
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void AlignTo::Interrupted() {
+void RotateTo::Interrupted() {
 }
 

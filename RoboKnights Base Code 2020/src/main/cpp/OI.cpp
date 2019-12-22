@@ -8,8 +8,19 @@
 #include "OI.h"
 
 #include <frc/WPILib.h>
+#include <frc/buttons/JoystickButton.h>
 
-OI::OI() {}
+#include "commands/RotateTo.h"
+
+using namespace frc;
+
+OI::OI() 
+{
+  joystick = new Joystick(JOYSTICK_PORT);
+  flightstick = new Joystick(FLIGHTSTICK_PORT);
+	JoystickButton* button1 = new JoystickButton(joystick, 1);
+  button1->WhenPressed(new RotateTo(90));
+}
 
 //For now, if int controller == 0, return the coresponding value on the flightstick,
 //else if 1, return the coresponding value on the joystick
@@ -21,10 +32,10 @@ double OI::getAxis(int axis, int controller)
   //return whatever axis is passed through the args
   if(controller == 0)
   {
-    return flightstick.GetRawAxis(axis);
+    return flightstick->GetRawAxis(axis);
   }else if(controller == 1)
   {
-    return joystick.GetRawAxis(axis);
+    return joystick->GetRawAxis(axis);
   }
 }
 
@@ -32,9 +43,9 @@ bool OI::getButton(int button, int controller)
 {
   if(controller == 0)
   {
-    return flightstick.GetRawButton(button);
+    return flightstick->GetRawButton(button);
   }else if(controller == 1)
   {
-    return joystick.GetRawButton(button);
+    return joystick->GetRawButton(button);
   }
 }

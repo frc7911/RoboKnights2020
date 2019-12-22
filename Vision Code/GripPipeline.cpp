@@ -2,8 +2,7 @@
 
 namespace grip {
 
-GripPipeline::GripPipeline() {
-}
+GripPipeline::GripPipeline() {}
 /**
 * Runs an iteration of the pipeline and updates outputs.
 */

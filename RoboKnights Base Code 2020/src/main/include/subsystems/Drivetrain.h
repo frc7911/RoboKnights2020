@@ -9,18 +9,19 @@
 
 #include <frc/commands/Subsystem.h>
 
-#include "frc/WPILib.h"
+#include <frc/WPILib.h>
 
 #include "RobotMap.h"
 
-#include "ctre/Phoenix.h"
+#include <ctre/Phoenix.h>
 
 class Drivetrain : public frc::Subsystem {
  public:
   Drivetrain();
   void InitDefaultCommand() override;
   void MecanumDrive(double x, double y, double rot);
-  void AlignTo(double degrees);
+  bool RotateTo(double degrees);
+  double GetGyroAngle();
 
  private:
   //Motor Controllers

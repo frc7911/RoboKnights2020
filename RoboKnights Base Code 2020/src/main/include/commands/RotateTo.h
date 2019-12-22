@@ -9,9 +9,9 @@
 
 #include <frc/commands/Command.h>
 
-class AlignTo : public frc::Command {
+class RotateTo : public frc::Command {
  public:
-  AlignTo(int deg);
+  RotateTo(int deg);
   void Initialize() override;
   void Execute() override;
   bool IsFinished() override;

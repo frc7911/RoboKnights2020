@@ -15,10 +15,6 @@
 
 #include <frc/WPILib.h>
 
-#include <iostream>
-
-using namespace std;
-
 Drivetrain::Drivetrain() : frc::Subsystem("Drivetrain"){}
 
 void Drivetrain::InitDefaultCommand() 

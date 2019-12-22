@@ -11,10 +11,6 @@
 
 #include <commands/DefaultDrive.h>
 
-#include <iostream>
-
-using namespace std;
-
 Drivetrain Robot::drivetrain;
 Elevator Robot::elevator;
 OI Robot::oi;

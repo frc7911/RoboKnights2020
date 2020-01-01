@@ -7,6 +7,8 @@
 
 #include "OI.h"
 
+#include "Robot.h"
+
 #include <frc/WPILib.h>
 #include <frc/buttons/JoystickButton.h>
 
@@ -18,8 +20,10 @@ OI::OI()
 {
   joystick = new Joystick(JOYSTICK_PORT);
   flightstick = new Joystick(FLIGHTSTICK_PORT);
-	JoystickButton* button1 = new JoystickButton(joystick, 1);
-  button1->WhenPressed(new RotateTo(90));
+
+	JoystickButton* rotateTo90Button = new JoystickButton(joystick, 1);
+
+  rotateTo90Button->WhenPressed(new RotateTo(90));
 }
 
 //For now, if int controller == 0, return the coresponding value on the flightstick,
@@ -39,13 +43,3 @@ double OI::getAxis(int axis, int controller)
   }
 }
 
-bool OI::getButton(int button, int controller)
-{
-  if(controller == 0)
-  {
-    return flightstick->GetRawButton(button);
-  }else if(controller == 1)
-  {
-    return joystick->GetRawButton(button);
-  }
-}

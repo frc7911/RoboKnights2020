@@ -21,6 +21,7 @@ class Drivetrain : public frc::Subsystem {
   void InitDefaultCommand() override;
   void MecanumDrive(double x, double y, double rot);
   bool RotateTo(double degrees);
+  void ResetGyroAngle();
   double GetGyroAngle();
 
  private:

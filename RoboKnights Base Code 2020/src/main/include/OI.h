@@ -15,7 +15,6 @@ class OI {
  public:
   OI();
   double getAxis(int axis, int controller);
-  bool getButton(int button, int controller);
 
 private:
   frc::Joystick* flightstick;

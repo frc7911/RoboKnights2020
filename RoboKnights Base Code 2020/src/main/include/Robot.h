@@ -12,13 +12,14 @@
 
 #include "OI.h"
 #include "subsystems/Drivetrain.h"
-#include "subsystems/Elevator.h"
+#include "utilities/RoboKnights.h"
 
 class Robot : public frc::TimedRobot {
  public:
   static Drivetrain drivetrain;
-  static Elevator elevator;
   static OI oi;
+
+  static RoboKnights utils;
 
   void RobotInit() override;
   void RobotPeriodic() override;

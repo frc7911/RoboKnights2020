@@ -21,9 +21,7 @@ RotateTo::RotateTo(int deg) {
 }
 
 // Called just before this Command runs the first time
-void RotateTo::Initialize() 
-{}
-
+void RotateTo::Initialize() {}
 // Called repeatedly when this Command is scheduled to run
 void RotateTo::Execute() 
 {
@@ -37,11 +35,9 @@ bool RotateTo::IsFinished() {
 }
 
 // Called once after isFinished returns true
-void RotateTo::End() {
-}
+void RotateTo::End() {}
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void RotateTo::Interrupted() {
-}
+void RotateTo::Interrupted() {}
 

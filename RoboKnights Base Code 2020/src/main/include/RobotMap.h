@@ -12,6 +12,7 @@ constexpr int DRIVE_FRONT_LEFT = 8;
 constexpr int DRIVE_FRONT_RIGHT = 5;
 constexpr int DRIVE_BACK_LEFT = 7;
 constexpr int DRIVE_BACK_RIGHT = 6;
+
 //_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+
 
 // Sensors CAN Device IDS
@@ -32,7 +33,10 @@ constexpr int JOYSTICK_ROT_AXIS = 0;
 //Drivetrain adjustable values
 constexpr double MAX_SPEED = 0.5;
 
+//Elevator adjustable values
+constexpr double ELEVATOR_MAX_SPEED = 0.75;
+
 //PID Values
-constexpr double ROT_P = 0.5;
-constexpr double ROT_I = 0.5;
-constexpr double ROT_D = 0.5;
+constexpr double ROT_P = 0.01;
+constexpr double ROT_I = 0;
+constexpr double ROT_D = 0;

@@ -11,12 +11,19 @@
 
 #include <commands/DefaultDrive.h>
 
+#include "utilities/RoboKnights.h"
+
 Drivetrain Robot::drivetrain;
-Elevator Robot::elevator;
 OI Robot::oi;
+RoboKnights Robot::utils;
 
 void Robot::RobotInit() 
 {
+  std::cout << "Reading config values from file... \n";
+  utils.ReadFile();
+  std::cout << "Resetting gyro angle... \n";
+  drivetrain.ResetGyroAngle();
+  std::cout << "Done! \n";
 }
 
 /**
@@ -49,22 +56,11 @@ void Robot::DisabledPeriodic() { frc::Scheduler::GetInstance()->Run(); }
  * chooser code above (like the commented example) or additional comparisons to
  * the if-else structure below with additional strings & commands.
  */
-void Robot::AutonomousInit()
-{
-}
+void Robot::AutonomousInit(){}
 
 void Robot::AutonomousPeriodic() { frc::Scheduler::GetInstance()->Run(); }
 
-void Robot::TeleopInit() {
-  // This makes sure that the autonomous stops running when
-  // teleop starts running. If you want the autonomous to
-  // continue until interrupted by another command, remove
-  // this line or comment it out.
-  //if (m_autonomousCommand != nullptr) {
-    //m_autonomousCommand->Cancel();
-    //m_autonomousCommand = nullptr;
-  //}
-}
+void Robot::TeleopInit() {}
 
 void Robot::TeleopPeriodic() 
 {
